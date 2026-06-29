@@ -20,7 +20,7 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold font-heading mb-6 text-white/90">About Connect Link</h1>
           <p className="text-lg text-gray-400 font-light leading-relaxed">
-            We are a premier construction and property development firm dedicated to building Zimbabwe's future. With over a decade of experience, we deliver uncompromising quality and visionary design in every project.
+            We are a premier construction and property development firm dedicated to building Zimbabwe&apos;s future. With over a decade of experience, we deliver uncompromising quality and visionary design in every project.
           </p>
         </div>
 

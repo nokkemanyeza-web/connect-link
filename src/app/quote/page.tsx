@@ -56,7 +56,7 @@ export default function QuoteWizard() {
       toast.success("Quote request submitted successfully! We will contact you soon.");
       setTimeout(() => router.push('/'), 3000);
       
-    } catch (err: any) {
+    } catch (err: unknown) {
       toast.error("Failed to submit quote. Ensure Supabase is configured.");
     } finally {
       setLoading(false);
@@ -67,7 +67,7 @@ export default function QuoteWizard() {
     <div className="py-24 container mx-auto px-4 md:px-8 min-h-[80vh] flex flex-col items-center">
       <div className="max-w-2xl w-full text-center mb-12">
         <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">Smart Quotation Wizard</h1>
-        <p className="text-muted-foreground">Tell us about your project and we'll prepare a custom, precise estimate.</p>
+        <p className="text-muted-foreground">Tell us about your project and we&apos;ll prepare a custom, precise estimate.</p>
       </div>
 
       <div className="w-full max-w-2xl bg-card border border-border rounded-2xl shadow-xl overflow-hidden">

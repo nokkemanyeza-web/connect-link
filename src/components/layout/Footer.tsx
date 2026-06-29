@@ -13,7 +13,7 @@ export function Footer() {
               <span className="text-2xl font-light text-white">GROUP</span>
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
-              Building Zimbabwe's Future, One Project at a Time. Premium construction, property development, and high-end interiors.
+              Building Zimbabwe&apos;s Future, One Project at a Time. Premium construction, property development, and high-end interiors.
             </p>
             <div className="flex gap-4 pt-2">
               <Link href="#" className="hover:text-primary transition-colors"><Globe size={20} /></Link>

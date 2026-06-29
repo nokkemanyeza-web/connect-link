@@ -169,7 +169,7 @@ export function TourHub() {
                <div className="w-12 h-12 rounded-full bg-black/50 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
                 <MapIcon className="w-5 h-5 text-white/70 group-hover:text-primary" />
               </div>
-              <h3 className="text-white font-medium tracking-wide">Chef's Kitchen</h3>
+              <h3 className="text-white font-medium tracking-wide">Chef&apos;s Kitchen</h3>
               <p className="text-xs text-muted-foreground mt-1 opacity-0 group-hover:opacity-100 transition-opacity">View 360°</p>
             </div>
 

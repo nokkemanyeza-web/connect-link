@@ -22,7 +22,7 @@ export function Hero() {
           </span>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-light text-white/90 font-heading leading-snug tracking-wide">
-            Building Zimbabwe's future, <br className="hidden md:block" />
+            Building Zimbabwe&apos;s future, <br className="hidden md:block" />
             one project at a time.
           </h1>
           

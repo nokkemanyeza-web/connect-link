@@ -45,7 +45,7 @@ export default function LoginPage() {
       else if (profile?.role === 'employee') router.push('/dashboard/employee');
       else router.push('/dashboard/customer');
       
-    } catch (err: any) {
+    } catch (err: unknown) {
       toast.error("An unexpected error occurred.");
     } finally {
       setLoading(false);
@@ -99,7 +99,7 @@ export default function LoginPage() {
         </form>
 
         <div className="mt-8 text-center text-sm text-muted-foreground">
-          Don't have an account? <Link href="/quote" className="text-primary hover:underline">Request a Quote</Link> to get started.
+          Don&apos;t have an account? <Link href="/quote" className="text-primary hover:underline">Request a Quote</Link> to get started.
         </div>
       </div>
     </div>
