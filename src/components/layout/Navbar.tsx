@@ -75,27 +75,29 @@ export function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-20 left-0 right-0 bg-background border-b shadow-lg p-4 flex flex-col gap-4"
+          className="md:hidden fixed inset-0 top-20 bg-[#060B14]/95 backdrop-blur-3xl p-6 flex flex-col gap-6 overflow-y-auto border-t border-white/10"
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              href={link.href}
-              className="text-lg font-medium p-2 hover:bg-muted rounded-md"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {link.name}
-            </Link>
-          ))}
-          <div className="flex flex-col gap-2 pt-4 border-t">
+          <div className="flex flex-col gap-4 mt-4">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-xl font-light text-white/90 p-3 hover:bg-white/5 rounded-xl transition-colors tracking-wide uppercase"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+          <div className="flex flex-col gap-4 pt-6 border-t border-white/10 mt-auto mb-10">
             <Link
               href="/login"
-              className="text-lg font-medium p-2 hover:bg-muted rounded-md"
+              className="text-xl font-light text-white/90 p-3 hover:bg-white/5 rounded-xl transition-colors text-center"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Login
+              Client Login
             </Link>
-            <Link href="/quote" onClick={() => setIsMobileMenuOpen(false)} className={buttonVariants({ className: "w-full rounded-full" })}>
+            <Link href="/quote" onClick={() => setIsMobileMenuOpen(false)} className={buttonVariants({ className: "w-full rounded-full h-14 text-lg bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg" })}>
               Get Free Quote
             </Link>
           </div>

@@ -68,7 +68,7 @@ export function ServicesGrid() {
           key={service.title} 
           variants={itemVariants}
           className={`group relative rounded-2xl overflow-hidden border border-white/10 bg-white/5 backdrop-blur-md transition-all hover:border-primary/50 ${
-            service.featured ? "md:col-span-2 h-[450px]" : "h-[400px]"
+            service.featured ? "md:col-span-2 h-[350px] md:h-[450px]" : "h-[320px] md:h-[400px]"
           }`}
         >
           {/* Background Image */}
@@ -82,7 +82,7 @@ export function ServicesGrid() {
           </div>
 
           {/* Content */}
-          <div className="relative z-20 h-full flex flex-col justify-end p-8 md:p-12">
+          <div className="relative z-20 h-full flex flex-col justify-end p-6 md:p-12">
             <h3 className="text-3xl font-light font-heading text-white mb-4">{service.title}</h3>
             <p className="text-gray-300 font-light max-w-2xl mb-8 leading-relaxed">
               {service.description}

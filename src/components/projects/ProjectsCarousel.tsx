@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, useAnimationFrame, useMotionValue } from "framer-motion";
 import Link from "next/link";
 
@@ -24,6 +24,14 @@ const filters = ["All", "Residential", "Commercial", "Civil", "Kitchens", "Cabin
 
 export function ProjectsCarousel() {
   const [activeFilter, setActiveFilter] = useState("All");
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
   
   // Continuous 3D rotation value
   const rotation = useMotionValue(0);
@@ -51,7 +59,7 @@ export function ProjectsCarousel() {
 
   const angleDelta = total > 0 ? 360 / total : 0;
   // Calculate a radius based on the number of items so they don't overlap too much
-  const radius = total <= 1 ? 0 : total <= 2 ? 220 : Math.max(280, total * 55);
+  const radius = total <= 1 ? 0 : total <= 2 ? (isMobile ? 150 : 220) : Math.max(isMobile ? 160 : 280, total * (isMobile ? 35 : 55));
 
   return (
     <div className="w-full overflow-hidden">
@@ -68,7 +76,7 @@ export function ProjectsCarousel() {
               <button 
                 key={filter} 
                 onClick={() => setFilter(filter)}
-                className={`px-5 py-2 rounded-full text-sm font-medium tracking-wide transition-all duration-300 active:scale-95 ${
+                className={`px-3 py-1.5 md:px-5 md:py-2 rounded-full text-xs md:text-sm font-medium tracking-wide transition-all duration-300 active:scale-95 ${
                   activeFilter === filter 
                     ? "bg-white/30 text-white shadow-[0_4px_12px_rgba(0,0,0,0.2)] border border-white/40"
                     : "bg-transparent text-white/80 hover:bg-white/20 hover:text-white"
@@ -86,7 +94,7 @@ export function ProjectsCarousel() {
         <div className="relative h-[550px] w-full mx-auto flex items-center justify-center perspective-[1200px]">
           
           <motion.div 
-            className="relative w-[240px] md:w-[300px] h-[320px] md:h-[350px]"
+            className="relative w-[200px] md:w-[300px] h-[280px] md:h-[350px]"
             style={{ 
               rotateY: rotation,
               transformStyle: "preserve-3d" 

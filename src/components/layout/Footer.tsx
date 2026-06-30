@@ -5,7 +5,7 @@ export function Footer() {
   return (
     <footer className="text-gray-300 py-16 border-t border-white/10 bg-white/5 backdrop-blur-2xl shadow-lg relative z-10 overflow-hidden">
       <div className="relative z-10 container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12">
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
