@@ -83,7 +83,7 @@ function Loader() {
 
 export function VirtualTour3D({ imageUrl, title, description, hotspots, onExit, onNext, onPrev }: VirtualTour3DProps) {
   return (
-    <div className="w-full h-screen bg-[#03060a] relative cursor-grab active:cursor-grabbing overflow-hidden">
+    <div className="w-full h-screen bg-[#03060a] relative cursor-grab active:cursor-grabbing overflow-hidden touch-none">
       <Canvas camera={{ position: [0, 0, 0.1], fov: 80 }}>
         <Suspense fallback={<Loader />}>
           <Panorama imageUrl={imageUrl} />
