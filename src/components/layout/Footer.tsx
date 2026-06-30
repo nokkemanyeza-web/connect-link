@@ -15,8 +15,8 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
-              <span className="text-2xl font-bold font-heading text-primary">NATTIE</span>
-              <span className="text-2xl font-light text-white">GROUP</span>
+              <span className="text-2xl font-bold font-heading text-primary">CONNECT</span>
+              <span className="text-2xl font-light text-white">LINK</span>
             </Link>
             <p className="text-sm leading-relaxed text-gray-400">
               Building Zimbabwe&apos;s Future, One Project at a Time. Premium construction, property development, and high-end interiors.

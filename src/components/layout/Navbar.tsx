@@ -38,8 +38,8 @@ export function Navbar() {
       <div className="container mx-auto px-4 md:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
-          <span className="text-2xl font-bold font-heading text-primary">NATTIE</span>
-          <span className="text-2xl font-light text-foreground">GROUP</span>
+          <span className="text-2xl font-bold font-heading text-primary">CONNECT</span>
+          <span className="text-2xl font-light text-foreground">LINK</span>
         </Link>
 
         {/* Desktop Nav */}
