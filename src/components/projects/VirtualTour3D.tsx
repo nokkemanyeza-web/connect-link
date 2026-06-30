@@ -106,15 +106,15 @@ export function VirtualTour3D({ imageUrl, title, description, hotspots, onExit, 
       </Canvas>
       
       {/* UI Overlay */}
-      <div className="absolute top-8 left-8 right-8 md:top-12 md:left-12 flex justify-between items-start pointer-events-none z-10">
-        <div className="bg-black/40 backdrop-blur-md border border-white/10 p-8 rounded-3xl max-w-md">
-          <span className="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest border border-primary/30 inline-block mb-4">
+      <div className="absolute top-4 left-4 right-20 md:top-12 md:left-12 flex justify-between items-start pointer-events-none z-10">
+        <div className="bg-black/40 backdrop-blur-md border border-white/10 p-4 md:p-8 rounded-2xl md:rounded-3xl max-w-[85%] md:max-w-md">
+          <span className="bg-primary/20 text-primary px-2 py-0.5 md:px-3 md:py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-widest border border-primary/30 inline-block mb-2 md:mb-4">
             Interactive 360° Tour
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold font-heading text-white drop-shadow-lg mb-4">
+          <h2 className="text-xl md:text-3xl lg:text-5xl font-bold font-heading text-white drop-shadow-lg mb-2 md:mb-4 leading-tight">
             {title}
           </h2>
-          <p className="text-gray-200 text-sm leading-relaxed drop-shadow-md">
+          <p className="text-gray-200 text-xs md:text-sm leading-relaxed drop-shadow-md line-clamp-2 md:line-clamp-none">
             {description}
           </p>
         </div>
@@ -122,36 +122,37 @@ export function VirtualTour3D({ imageUrl, title, description, hotspots, onExit, 
 
       {/* Exit Button */}
       {onExit && (
-        <div className="absolute top-8 right-8 md:top-12 md:right-12 z-20">
+        <div className="absolute top-4 right-4 md:top-12 md:right-12 z-20">
           <button 
             onClick={onExit}
-            className="bg-black/50 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black px-6 py-3 rounded-full flex items-center gap-2 font-medium transition-colors shadow-xl"
+            className="bg-black/50 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black px-3 py-2 md:px-6 md:py-3 rounded-full flex items-center gap-1.5 md:gap-2 text-xs md:text-base font-medium transition-colors shadow-xl"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
-            Return to Map
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-3 h-3 md:w-4 md:h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+            <span className="hidden sm:inline">Return to Map</span>
+            <span className="sm:hidden">Back</span>
           </button>
         </div>
       )}
 
       {/* Room Navigation Overlay (Next/Prev Room) */}
       {(onNext || onPrev) && (
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-4">
+        <div className="absolute bottom-6 md:bottom-12 left-1/2 -translate-x-1/2 z-20 flex gap-4">
           {onPrev && (
             <button 
               onClick={onPrev}
-              className="bg-black/50 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black w-14 h-14 rounded-full flex items-center justify-center transition-colors shadow-xl"
+              className="bg-black/50 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center transition-colors shadow-xl"
               title="Previous Room"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg>
             </button>
           )}
           {onNext && (
             <button 
               onClick={onNext}
-              className="bg-black/50 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black w-14 h-14 rounded-full flex items-center justify-center transition-colors shadow-xl"
+              className="bg-black/50 backdrop-blur-md border border-white/20 text-white hover:bg-white hover:text-black w-10 h-10 md:w-14 md:h-14 rounded-full flex items-center justify-center transition-colors shadow-xl"
               title="Next Room"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 md:w-6 md:h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg>
             </button>
           )}
         </div>
