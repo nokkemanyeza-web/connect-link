@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 
@@ -21,6 +22,9 @@ export function Navbar() {
     { name: "Services", href: "/services" },
     { name: "Projects", href: "/projects" },
   ];
+
+  const pathname = usePathname();
+  if (pathname.includes("-tour")) return null;
 
   return (
     <motion.header

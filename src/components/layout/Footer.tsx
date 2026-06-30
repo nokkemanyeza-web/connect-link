@@ -1,7 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { Globe, MessageCircle, Camera, Briefcase, MapPin, Phone, Mail } from "lucide-react";
+import { usePathname } from "next/navigation";
 
 export function Footer() {
+  const pathname = usePathname();
+  if (pathname.includes("-tour")) return null;
+
   return (
     <footer className="text-gray-300 py-16 border-t border-white/10 bg-white/5 backdrop-blur-2xl shadow-lg relative z-10 overflow-hidden">
       <div className="relative z-10 container mx-auto px-4 md:px-8">
